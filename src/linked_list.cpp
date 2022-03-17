@@ -114,12 +114,14 @@ namespace assignment {
   void LinkedList::Clear() {
 
     while (size_ > 0){
-      Node *temp = front_;
-      front_ = front_->next;
+      Node* node = front_->next;
 
-      delete temp;
+      delete front_;
+      front_ = node;
       size_--;
     }
+    delete front_;
+    back_ = front_;
   }
 
   std::optional<int> LinkedList::Get(int index) const {
