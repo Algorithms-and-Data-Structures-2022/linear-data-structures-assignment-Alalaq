@@ -48,9 +48,8 @@ namespace assignment {
     for (int i = 0; i < size_ - 1; i++){
       new_data[i] = data_[i];
     }
+
     data_ = new_data;
-    delete[] new_data;
-    new_data = nullptr;
 
     size_--;
     return true;
