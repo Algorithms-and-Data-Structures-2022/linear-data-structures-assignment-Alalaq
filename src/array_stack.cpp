@@ -43,6 +43,14 @@ namespace assignment {
     if (size_ == 0) {
       return false;
     }
+    int* new_data = new int[capacity_];
+
+    for (int i = 0; i < size_ - 1; i++){
+      new_data[i] = data_[i];
+    }
+    data_ = new_data;
+    delete[] new_data;
+    new_data = nullptr;
 
     size_--;
     return true;
@@ -50,6 +58,8 @@ namespace assignment {
 
   void ArrayStack::Clear() {
     size_ = 0;
+    delete[] data_;
+    data_ = nullptr;
   }
 
   std::optional<int> ArrayStack::Peek() const {
