@@ -82,6 +82,8 @@ namespace assignment {
 
   void DynamicArray::Clear() {
     size_ = 0;
+    delete[] data_;
+    data_ = nullptr;
   }
 
   std::optional<int> DynamicArray::Get(int index) const {
